@@ -1,1 +1,1 @@
-# mynewproject-github
+# My New Project
