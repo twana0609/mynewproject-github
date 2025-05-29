@@ -1,6 +1,10 @@
 @echo off
-echo Starting GitHub Auto-Sync...
-cd /d "%~dp0"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File \"%~dp0auto-sync.ps1\"' -Verb RunAs}"
-echo If you don't see a PowerShell window, check your taskbar for a minimized window.
-pause 
+echo Auto-sync is running. Keep this window open.
+echo Press Ctrl+C to stop.
+
+:loop
+git add .
+git commit -m "Auto sync" --quiet
+git push origin main --quiet
+ping 127.0.0.1 -n 6 > nul
+goto loop 
