@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greetings</title>
+</head>
+<body>
+    <h1>Greetings</h1>
+    <ul>
+    {% for greeting in greetings %}
+        <li>{{ greeting.message }} (created at: {{ greeting.created_at }})</li>
+    {% endfor %}
+    </ul>
+</body>
+</html> 
